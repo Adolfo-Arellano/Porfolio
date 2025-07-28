@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: "JetBrainsMono", system-ui, monospace, sans-serif;
+}
+
+/* Variables CSS estándar */
+:root {
+  /* Color Palette */
+  --color-one: #0ea5e9;
+  
+  /* Breakpoints */
+  --breakpoint-xs: 420px;
+}
+
+@layer components {
+  .social-button {
+    @apply p-2 w-10 h-10 sm:w-12 sm:h-12 xl:w-16 xl:h-16 flex items-center justify-center rounded-full hover:scale-110 transition-transform;
+  }
+
+  .technologies {
+    @apply relative py-5 rounded-2xl overflow-hidden flex flex-col items-start hover:scale-105 hover:contrast-125 transition-all duration-300;
+    min-height: 12.5rem;
+  }
+}

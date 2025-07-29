@@ -1,12 +1,20 @@
 import Chef from '../assets/SalteandoLasSkillsYo2-Photoroom.png';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './ChefWithRealImage.css';
+
+interface Technology {
+  name: string;
+  finalPosition: { x: number; y: number };
+  delay: number;
+  color?: string;
+  logo?: string;
+}
 
 const ChefWithRealImage = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [skillsRevealed, setSkillsRevealed] = useState(false);
 
-  const technologies = [
+  const technologies: Technology[] = [
     { name: 'Empatía', finalPosition: { x: -15, y: 90 }, delay: 0 },
     { name: 'Trabajo en equipo', finalPosition: { x: -150, y: 105 }, delay: 0.1 }, 
     { name: 'Adaptabilidad', finalPosition: { x: -20, y: 140 }, delay: 0.2 },
@@ -45,7 +53,7 @@ const ChefWithRealImage = () => {
           </div>
           
           {/* Skills flotantes */}
-          {technologies.map((tech, index) => (
+          {technologies.map((tech) => (
             <div
               key={tech.name}
               className={`absolute origin-center transition-opacity ${

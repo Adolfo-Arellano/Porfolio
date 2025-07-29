@@ -1,7 +1,21 @@
 import { useState, useRef } from 'react';
 import { motion, useMotionTemplate, useMotionValue, useSpring } from 'framer-motion';
 
-const ProjectCard = ({ 
+interface Skill {
+  name: string;
+  icon: string;
+}
+
+interface ProjectCardProps {
+  title?: string;
+  description?: string;
+  backgroundImage?: string;
+  skills?: Skill[];
+  demoUrl?: string;
+  githubUrl?: string;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ 
   title = "", 
   description = "",
   backgroundImage = "",
@@ -10,7 +24,7 @@ const ProjectCard = ({
   githubUrl = ""
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const cardRef = useRef(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   // Motion values para la rotación 3D
   const mouseX = useMotionValue(0);
@@ -34,7 +48,7 @@ const ProjectCard = ({
     )
   `;
 
-  const handleMouseMove = (event) => {
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>): void => {
     if (!cardRef.current) return;
 
     const rect = cardRef.current.getBoundingClientRect();

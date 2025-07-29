@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 import adolfoImage from '../assets/adolfo.jpg';
 
 const UserProfile = () => {

@@ -159,12 +159,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <div className="flex gap-3 mb-4">
               <a 
                 href={demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex justify-center items-center px-3 py-1.5 bg-lime-500 text-white rounded-lg text-sm font-medium hover:bg-lime-900 transition-colors"
               >
                 Ver Demo
               </a>
               <a 
                 href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex justify-center items-center px-3 py-1.5 bg-amber-500 text-white rounded-lg text-sm font-medium hover:bg-orange-900 transition-colors"
               >
                 GitHub

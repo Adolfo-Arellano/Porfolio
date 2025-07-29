@@ -27,9 +27,9 @@ const Projects = () => {
       <p className="text-center text-lg font-medium text-gray-800 pb-5">Proyectos cocinados a fuego lento con mucho esmero y pasión</p>
 
       <div className="flex gap-6 justify-center">
-        <ProjectCard demoUrl="https://hayaku-psi.vercel.app/" githubUrl="https://github.com/Adolfo-Arellano/Hayaku" backgroundImage="/assets/Hayaku1.png" skills={hayakuSkills} description="Una pagina web de servicios de entretención de streaming en vivo con diferentes categorias para descubrir." title="Hayaku" />
-        <ProjectCard demoUrl="https://anteiku-coffee-cac.netlify.app/" githubUrl="https://github.com/Adolfo-Arellano/Anteiku-Coffee" backgroundImage="/assets/AnteikuCoffee1.png" skills={anteikuSkills} description="Una cafetería en línea que ofrece una experiencia única de café." title="Anteiku Coffee" />
-        <ProjectCard demoUrl="https://eco-tree.netlify.app/" githubUrl="https://github.com/Adolfo-Arellano/Eco-Tree" backgroundImage="/assets/EcoTree1.png" skills={ecoTreeSkills} description="Decoracion para tus jardines y patios, con armados de areas verdes con estanques y mucho más." title="Eco Tree" />
+        <ProjectCard demoUrl="https://hayaku-psi.vercel.app/" githubUrl="https://github.com/Adolfo-Arellano/Hayaku" backgroundImage="/assets/Hayaku1.png" skills={hayakuSkills} description="Una pagina web de servicios de entretención de streaming en vivo con diferentes categorias para descubrir." title="Hayaku"/>
+        <ProjectCard demoUrl="https://anteiku-coffee-cac.netlify.app/" githubUrl="https://github.com/Adolfo-Arellano/Anteiku-Coffee" backgroundImage="/assets/AnteikuCoffee1.png" skills={anteikuSkills} description="Una cafetería en línea que ofrece una experiencia única de café." title="Anteiku Coffee"/>
+        <ProjectCard demoUrl="https://eco-tree.netlify.app/" githubUrl="https://github.com/Adolfo-Arellano/Eco-Tree" backgroundImage="/assets/EcoTree1.png" skills={ecoTreeSkills} description="Decoracion para tus jardines y patios, con armados de areas verdes con estanques y mucho más." title="Eco Tree"/>
       </div>
     </div>
   );

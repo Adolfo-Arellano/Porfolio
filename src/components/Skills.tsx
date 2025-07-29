@@ -2,7 +2,7 @@ const Skills = () => {
   return (
     <div className="w-full bg-gradient-to-r from-[#8BC34A] via-[#689F38] to-[#1B5E20] pt-10 pb-16">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-4xl text-center font-extrabold text-gray-900 pb-2">Mis especializaciones</h2>
+        <h2 className="text-4xl text-center font-extrabold text-gray-900 pb-2">Tecnologías</h2>
         <p className="text-center text-lg font-medium text-gray-800 pb-5">Cada tecnología es un ingrediente clave en mi cocina.</p>
       </div>
       <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

@@ -23,7 +23,7 @@ const Projects = () => {
 
   return (
     <div className="w-full bg-gradient-to-bl from-[#FF6B35] via-[#F7931E] to-[#BF360C] pt-10 pb-16">
-      <h2 className="text-4xl text-center font-extrabold text-gray-900 pb-2">Mis platos principales </h2>
+      <h2 className="text-4xl text-center font-extrabold text-gray-900 pb-2">Proyectos</h2>
       <p className="text-center text-lg font-medium text-gray-800 pb-5">Proyectos cocinados a fuego lento con mucho esmero y pasión</p>
 
       <div className="flex gap-6 justify-center">

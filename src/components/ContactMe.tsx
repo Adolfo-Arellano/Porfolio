@@ -4,10 +4,10 @@ const ContactMe = () => {
   return (
     <div className="w-full text-center pt-10 pb-8 bg-gradient-to-t from-[#3E2723] via-[#2E1A14] to-[#000000]">
       <h2 className="text-4xl font-extrabold text-amber-50 mb-4">
-        ¿List@ para crear algo delicioso?
+        ¿Hablamos de tu próximo proyecto?
       </h2>
       <p className="text-orange-200 text-lg mb-8">
-        Contactame para cocinar juntos tu próximo proyecto
+        Contáctame para construir juntos algo increíble
       </p>
       
       <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
@@ -32,7 +32,7 @@ const ContactMe = () => {
           Buenos Aires, Argentina
         </div>
       </div>
-      <p className="pt-10 italic text-lime-200">"El mejor código, como la mejor comida, se hace con amor y atención al detalle" 👨‍🍳💻</p>
+      <p className="pt-10 italic text-lime-200">"El mejor código, como la mejor comida, se hace con amor y atención al detalle" <span className="not-italic">👨‍🍳💻</span></p>
       <p className="text-lime-200">© 2025 Adolfo Arellano Covarrubias</p>
     </div>
   );

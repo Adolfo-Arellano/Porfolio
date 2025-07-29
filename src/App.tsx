@@ -2,7 +2,7 @@ import './App.css'
 import UserProfile from './components/UserProfile'
 import Stack from './components/Skills'
 import Projects from './components/Projects/Projects'
-import ChefWithRealImage from './components/ChefWithRealImage'
+import ChefImage from './components/ChefImage'
 import ContactMe from './components/ContactMe'
 
 const App = () => {
@@ -12,7 +12,7 @@ const App = () => {
         <UserProfile />
         <Stack />
         <Projects />
-        <ChefWithRealImage />
+        <ChefImage />
         <ContactMe />
       </div>
     </div>

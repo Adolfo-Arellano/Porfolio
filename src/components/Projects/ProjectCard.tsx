@@ -26,19 +26,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
-  // Motion values para la rotación 3D
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  // Springs para suavizar las animaciones
   const rotateX = useSpring(useMotionValue(0), { stiffness: 300, damping: 30 });
   const rotateY = useSpring(useMotionValue(0), { stiffness: 300, damping: 30 });
 
-  // Motion values para el brillo/shine
   const shineX = useSpring(mouseX, { stiffness: 1500, damping: 30 });
   const shineY = useSpring(mouseY, { stiffness: 1500, damping: 30 });
 
-  // Gradiente del shine que sigue al mouse
   const shineGradient = useMotionTemplate`
     radial-gradient(
       600px circle at ${shineX}px ${shineY}px,
@@ -55,24 +51,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     const width = rect.width;
     const height = rect.height;
     
-    // Calcular la posición relativa del mouse
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
     
-    // Convertir a coordenadas centradas (-0.5 a 0.5)
     const centerX = (x - width / 2) / width;
     const centerY = (y - height / 2) / height;
     
     const intensity = 30;
     
-    // NUEVA LÓGICA: SIEMPRE empujar hacia atrás
-    const absRotationX = Math.abs(centerY) * intensity; // SIEMPRE positivo
+    const absRotationX = Math.abs(centerY) * intensity;
     const rotationY = centerX * intensity;
-    
-    rotateX.set(absRotationX); // SIEMPRE empuja hacia atrás
-    rotateY.set(rotationY);    // Comportamiento horizontal normal
-    
-    // Actualizar posición del shine
+
+    rotateX.set(absRotationX);
+    rotateY.set(rotationY);
+
     shineX.set(x);
     shineY.set(y);
     mouseX.set(x);
@@ -85,7 +77,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   const handleMouseLeave = () => {
     setIsHovered(false);
-    // Resetear rotaciones
     rotateX.set(0);
     rotateY.set(0);
   };
@@ -108,7 +99,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         ease: "easeOut"
       }}
     >
-      {/* Card container con rotación 3D */}
       <motion.div
         className="relative w-full h-full rounded-xl overflow-hidden"
         style={{
@@ -117,7 +107,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           transformStyle: "preserve-3d",
         }}
       >
-        {/* Imagen de fondo */}
         <div 
           className="absolute inset-0 bg-cover bg-center transition-transform duration-300"
           style={{ 
@@ -129,10 +118,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           }}
         />
         
-        {/* Gradiente base */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
         
-        {/* Shine overlay - aparece solo en hover */}
         <motion.div
           className="absolute inset-0 opacity-0 pointer-events-none"
           style={{
@@ -147,9 +134,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           }}
         />
         
-        {/* Contenido del card */}
         <div className="absolute inset-0 flex flex-col justify-end p-6">
-          {/* Información que aparece en hover */}
           <div className={`transform transition-all duration-300 ${
             isHovered ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
           }`}>
@@ -158,17 +143,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             
             <div className="flex gap-3 mb-4">
               <a 
-                href={demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={demoUrl} target="_blank" rel="noopener noreferrer"
                 className="flex justify-center items-center px-3 py-1.5 bg-lime-500 text-white rounded-lg text-sm font-medium hover:bg-lime-900 transition-colors"
               >
                 Ver Demo
               </a>
               <a 
-                href={githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={githubUrl} target="_blank" rel="noopener noreferrer"
                 className="flex justify-center items-center px-3 py-1.5 bg-amber-500 text-white rounded-lg text-sm font-medium hover:bg-orange-900 transition-colors"
               >
                 GitHub
@@ -176,7 +157,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
           </div>
           
-          {/* Skills siempre visibles */}
           <div className="flex flex-wrap gap-2">
             {skills.map((skill, index) => (
               <div 
@@ -194,14 +174,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         </div>
         
-        {/* Icono de esquina que aparece en hover */}
         <div className={`absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 flex items-center justify-center transition-all duration-300 ${
           isHovered ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
         }`}>
           <span className="text-white text-sm">↗</span>
         </div>
         
-        {/* Borde brillante que aparece en hover */}
         <motion.div
           className="absolute inset-0 rounded-xl pointer-events-none"
           style={{

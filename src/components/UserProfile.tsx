@@ -1,5 +1,52 @@
 import adolfoImage from '../assets/adolfo.jpg';
 
+import { useState, useEffect } from 'react';
+
+interface TypewriterProps {
+  text: string;
+  speed?: number;
+  delay?: number;
+}
+
+const Typewriter: React.FC<TypewriterProps> = ({ 
+  text, 
+  speed = 50,
+  delay = 1000
+}) => {
+  const [displayedText, setDisplayedText] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
+
+  useEffect(() => {
+    const startDelay = setTimeout(() => {
+      setIsTyping(true);
+      let currentIndex = 0;
+
+      const typeInterval = setInterval(() => {
+        if (currentIndex < text.length) {
+          setDisplayedText(text.slice(0, currentIndex + 1));
+          currentIndex++;
+        } else {
+          clearInterval(typeInterval);
+          setIsTyping(false);
+        }
+      }, speed);
+
+      return () => clearInterval(typeInterval);
+    }, delay);
+
+    return () => clearTimeout(startDelay);
+  }, [text, speed, delay]);
+
+  return (
+    <span>
+      {displayedText}
+      {isTyping && (
+        <span className="animate-pulse text-orange-500 font-bold">|</span>
+      )}
+    </span>
+  );
+};
+
 const UserProfile = () => {
   return (
     <div className="w-full bg-gradient-to-br from-[#FFF8E1] via-[#FFECB3] to-[#FF8F00] pt-8 pb-10">
@@ -43,10 +90,12 @@ const UserProfile = () => {
           </div>
           
           <p className="text-gray-700 font-medium text-lg text-center max-w-2xl px-4 mt-4">
-            Desarrollador Frontend que trata cada proyecto como una receta única. 
+            <Typewriter
+              text='Desarrollador Frontend que trata cada proyecto como una receta única. 
             Combinando creatividad, técnica y pasión para crear interfaces que no solo 
             sean modernas, sino que también deleiten a quienes las utilicen. 
-            Siempre buscando los mejores ingredientes tecnológicos para cada plato digital.
+            Siempre buscando los mejores ingredientes tecnológicos para cada plato digital.'
+            />
           </p>
         </div>
       </div>

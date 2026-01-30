@@ -1,4 +1,4 @@
-import adolfoImage from '../assets/adolfo.jpg';
+import adolfoImage from '../assets/Nacho.png';
 
 import { useState, useEffect } from 'react';
 
@@ -56,7 +56,7 @@ const UserProfile = () => {
             <img 
               src={adolfoImage} 
               alt="Foto Perfil Adolfo" 
-              className="w-72 h-72 rounded-full object-cover mb-4 border-4 border-white/20 shadow-2xl"
+              className="w-72 h-72 rounded-full object-cover object-[50%_30%] mb-4 border-4 border-white/90 shadow-2xl bg-white/90"
             />
           </div>
 

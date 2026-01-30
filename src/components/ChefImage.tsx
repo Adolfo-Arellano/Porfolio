@@ -54,9 +54,9 @@ const ChefWithRealImage = () => {
               }`}
             />
             {!skillsRevealed && (
-              <div className="absolute bottom-44 -left-12 z-20 animate-bounce">
+              <div className="absolute bottom-36 sm:bottom-44 left-4 sm:-left-12 z-20 animate-bounce">
                 <div className="relative bg-white/90 backdrop-blur-md rounded-xl px-2 py-1 shadow-2xl border-2 border-orange-300/50">
-                  <p className="text-gray-700 font-medium text-sm">
+                  <p className="text-gray-700 font-medium text-xs sm:text-sm">
                     ¡Descubre mis secretos! 👇🍳
                   </p>
                   <div className="absolute top-full left-24 w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-white/90"></div>

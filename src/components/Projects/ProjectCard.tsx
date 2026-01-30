@@ -84,7 +84,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <motion.div 
       ref={cardRef}
-      className="relative w-80 h-96 rounded-xl overflow-hidden cursor-pointer"
+      className="relative w-[360px] h-[440px] rounded-xl overflow-hidden cursor-pointer"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}

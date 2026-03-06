@@ -16,7 +16,7 @@ const Projects = () => {
     { name: "TypeScript", icon: "typescript" },
     { name: "Tailwind", icon: "tailwind" },
     { name: "Node.js", icon: "nodejs" },
-    { name: "Nest", icon: "Nest" },
+    { name: "NestJS", icon: "nestjs" },
   ];
 
   const portfolioSkills = [

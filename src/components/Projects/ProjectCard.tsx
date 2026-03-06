@@ -111,7 +111,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           className="absolute inset-0 bg-cover bg-center transition-transform duration-300"
           style={{ 
             backgroundImage: `url(${backgroundImage})`,
-            backgroundSize: '135%',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'top',
             transform: isHovered ? 'scale(1.1)' : 'scale(1)'
@@ -165,9 +164,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   isHovered ? 'bg-white/20 text-white' : 'bg-black/60 text-gray-300'
                 }`}
               >
-                <svg className="w-4 h-4" fill="currentColor">
-                  <use href={`/sprite.svg#${skill.icon}`} />
-                </svg>
+                <img
+                  src={`/icons/${skill.icon}.svg`}
+                  alt={skill.name}
+                  className="w-4 h-4"
+                />
                 <span>{skill.name}</span>
               </div>
             ))}

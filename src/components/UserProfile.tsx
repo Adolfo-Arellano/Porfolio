@@ -72,9 +72,8 @@ const UserProfile = () => {
               aria-label="LinkedIn"
               title="LinkedIn"
             >
-              <svg width="30" height="30">
-                <use href="/sprite.svg#linkedin"></use>
-              </svg>
+              <img src="/icons/linkedin.svg" width="36" height="36">
+              </img>
             </a>
             <a
               className="social-button bg-black transition-transform"
@@ -83,9 +82,8 @@ const UserProfile = () => {
               aria-label="Github"
               title="Github"
             >
-              <svg width="30" height="30">
-                  <use href="/sprite.svg#github"></use>
-              </svg>
+              <img src="/icons/github.svg" width="40" height="40">
+              </img>
             </a>
           </div>
           

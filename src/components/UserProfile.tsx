@@ -89,7 +89,7 @@ const UserProfile = () => {
           
           <p className="text-gray-700 font-medium text-lg text-center max-w-2xl px-4 mt-4">
             <Typewriter
-              text='Desarrollador Frontend que trata cada proyecto como una receta única. 
+              text='Desarrollador Fullstack que trata cada proyecto como una receta única. 
               Combinando creatividad, técnica y pasión para crear interfaces que no solo 
               sean modernas, sino que también deleiten a quienes las utilicen. 
               Siempre buscando los mejores ingredientes tecnológicos para cada plato digital.'

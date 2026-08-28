@@ -26,7 +26,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <div className="w-[360px]" style={{ border: '1px solid var(--line-strong)', borderRadius: 4 }}>
-      {/* Rótulo por fuera de la imagen, dentro del marco compartido */}
       <div
         className="font-mono text-sm font-medium tracking-wide px-3 py-2.5"
         style={{
@@ -37,7 +36,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       >
         {title}
       </div>
-
       <div
         className="relative w-full h-[400px] overflow-hidden cursor-pointer"
         onMouseEnter={() => setIsHovered(true)}

@@ -84,7 +84,6 @@ const Skills = () => {
           className="rounded-md overflow-hidden"
           style={{ border: '1px solid var(--line-strong)', background: '#0A0806' }}
         >
-          {/* Barra de título estilo Windows Terminal */}
           <div
             className="flex items-center px-3 py-0"
             style={{ background: 'var(--bg-charcoal)', borderBottom: '1px solid var(--line)' }}
@@ -105,8 +104,6 @@ const Skills = () => {
               <span className="font-mono text-[13px] leading-none">×</span>
             </div>
           </div>
-
-          {/* Cuerpo */}
           <div className="font-mono text-[13px] sm:text-sm p-5 sm:p-7 min-h-[340px] leading-relaxed">
             {lines.slice(0, visibleCount).map((line, i) => (
               <TerminalLine

@@ -6,25 +6,83 @@
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  font-family: "JetBrainsMono", system-ui, monospace, sans-serif;
 }
 
-/* Variables CSS estándar */
 :root {
-  /* Color Palette */
-  --color-one: #0ea5e9;
-  
-  /* Breakpoints */
-  --breakpoint-xs: 420px;
+  --bg-void: #0E0B09;
+  --bg-charcoal: #17130F;
+  --bg-charcoal-2: #1D1712;
+  --ember: #E8873A;
+  --ember-dim: #B8672A;
+  --sage: #8A9A5B;
+  --sage-dim: #6B7A45;
+  --cream: #F4EEE3;
+  --cream-dim: #C9C0AE;
+  --line: rgba(244,238,227,0.10);
+  --line-strong: rgba(244,238,227,0.18);
+}
+
+body {
+  background: var(--bg-void);
+  color: var(--cream);
 }
 
 @layer components {
-  .social-button {
-    @apply p-2 w-10 h-10 sm:w-12 sm:h-12 xl:w-16 xl:h-16 flex items-center justify-center rounded-full hover:scale-110 transition-transform;
+  .font-display {
+    font-family: 'Fraunces', serif;
+    font-optical-sizing: auto;
+  }
+  .font-mono {
+    font-family: 'JetBrainsMono', monospace;
+  }
+  .font-body {
+    font-family: 'Inter', system-ui, sans-serif;
   }
 
-  .technologies {
-    @apply relative py-5 rounded-2xl overflow-hidden flex flex-col items-start hover:scale-105 hover:contrast-125 transition-all duration-300;
-    min-height: 12.5rem;
+  .eyebrow {
+    @apply font-mono text-xs tracking-widest uppercase flex items-center gap-2.5;
+    color: var(--ember);
+  }
+  .eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--ember);
+  }
+
+  .btn {
+    @apply font-mono text-sm tracking-wide px-6 py-3.5 rounded-sm inline-flex items-center gap-2 transition-all duration-300;
+  }
+  .btn-primary {
+    background: var(--ember);
+    color: #1A1006;
+    font-weight: 600;
+  }
+  .btn-primary:hover {
+    background: var(--cream);
+    transform: translateY(-2px);
+  }
+  .btn-ghost {
+    border: 1px solid var(--line-strong);
+    color: var(--cream);
+  }
+  .btn-ghost:hover {
+    border-color: var(--ember);
+    color: var(--ember);
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line-strong) 20%, var(--line-strong) 80%, transparent);
+  }
+
+  .social-button {
+    @apply w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300;
+    border: 1px solid var(--line-strong);
+    color: var(--cream-dim);
+  }
+  .social-button:hover {
+    border-color: var(--ember);
+    color: var(--ember);
   }
 }

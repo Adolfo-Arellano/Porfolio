@@ -38,8 +38,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const shineGradient = useMotionTemplate`
     radial-gradient(
       600px circle at ${shineX}px ${shineY}px,
-      rgba(255, 255, 255, 0.3) 0%,
-      rgba(255, 255, 255, 0.1) 30%,
+      rgba(232, 135, 58, 0.18) 0%,
+      rgba(232, 135, 58, 0.06) 30%,
       transparent 70%
     )
   `;
@@ -84,12 +84,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <motion.div 
       ref={cardRef}
-      className="relative w-[360px] h-[440px] rounded-xl overflow-hidden cursor-pointer"
+      className="relative w-[360px] h-[440px] rounded-sm overflow-hidden cursor-pointer"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
       style={{
         transformStyle: "preserve-3d",
+        border: '1px solid var(--line-strong)',
       }}
       animate={{
         scale: isHovered ? 1.02 : 1,
@@ -100,7 +101,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       }}
     >
       <motion.div
-        className="relative w-full h-full rounded-xl overflow-hidden"
+        className="relative w-full h-full rounded-sm overflow-hidden"
         style={{
           rotateX,
           rotateY,
@@ -117,7 +118,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           }}
         />
         
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to top, var(--bg-void) 5%, rgba(14,11,9,0.55) 45%, transparent 80%)' }}
+        />
         
         <motion.div
           className="absolute inset-0 opacity-0 pointer-events-none"
@@ -137,19 +141,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <div className={`transform transition-all duration-300 ${
             isHovered ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
           }`}>
-            <h3 className="text-white text-xl font-bold mb-2">{title}</h3>
-            <p className="text-white text-sm font-semibold mb-4 line-clamp-3">{description}</p>
+            <h3 className="font-display font-semibold text-xl mb-2" style={{ color: 'var(--cream)' }}>{title}</h3>
+            <p className="font-body text-sm mb-4 line-clamp-3" style={{ color: 'var(--cream-dim)' }}>{description}</p>
             
             <div className="flex gap-3 mb-4">
               <a 
                 href={demoUrl} target="_blank" rel="noopener noreferrer"
-                className="flex justify-center items-center px-3 py-1.5 bg-lime-500 text-white rounded-lg text-sm font-medium hover:bg-lime-900 transition-colors"
+                className="font-mono flex justify-center items-center px-3 py-1.5 rounded-sm text-xs font-medium transition-colors"
+                style={{ background: 'var(--ember)', color: '#1A1006' }}
               >
                 Ver Demo
               </a>
               <a 
                 href={githubUrl} target="_blank" rel="noopener noreferrer"
-                className="flex justify-center items-center px-3 py-1.5 bg-amber-500 text-white rounded-lg text-sm font-medium hover:bg-orange-900 transition-colors"
+                className="font-mono flex justify-center items-center px-3 py-1.5 rounded-sm text-xs font-medium transition-colors"
+                style={{ border: '1px solid var(--line-strong)', color: 'var(--cream)' }}
               >
                 GitHub
               </a>
@@ -160,9 +166,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             {skills.map((skill, index) => (
               <div 
                 key={index}
-                className={`flex items-center gap-2 px-2.5 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
-                  isHovered ? 'bg-white/20 text-white' : 'bg-black/60 text-gray-300'
-                }`}
+                className="font-mono flex items-center gap-2 px-2.5 py-1.5 rounded-full text-xs font-medium transition-all duration-300"
+                style={{
+                  background: isHovered ? 'rgba(244,238,227,0.12)' : 'rgba(14,11,9,0.7)',
+                  color: isHovered ? 'var(--cream)' : 'var(--cream-dim)',
+                }}
               >
                 <img
                   src={`/icons/${skill.icon}.svg`}
@@ -175,16 +183,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         </div>
         
-        <div className={`absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 flex items-center justify-center transition-all duration-300 ${
-          isHovered ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
-        }`}>
-          <span className="text-white text-sm">↗</span>
+        <div
+          className={`absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+            isHovered ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+          }`}
+          style={{ background: 'rgba(244,238,227,0.15)' }}
+        >
+          <span className="text-sm" style={{ color: 'var(--cream)' }}>↗</span>
         </div>
         
         <motion.div
-          className="absolute inset-0 rounded-xl pointer-events-none"
+          className="absolute inset-0 rounded-sm pointer-events-none"
           style={{
-            background: `linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent)`,
+            background: `linear-gradient(90deg, transparent, rgba(244, 238, 227, 0.25), transparent)`,
             backgroundSize: '200% 100%',
           }}
           animate={{

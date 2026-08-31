@@ -51,7 +51,7 @@ const Projects = () => {
             className="font-body text-sm max-w-[340px] sm:text-right"
             style={{ color: 'var(--cream-dim)' }}
           >
-            Una selección de trabajos propios y en equipo, de e-commerce a dashboards internos.
+            
           </p>
         </div>
 

@@ -21,7 +21,7 @@ const UserProfile = () => {
           </h1>
 
           <p className="font-body text-lg leading-relaxed max-w-[520px] mb-9" style={{ color: 'var(--cream-dim)' }}>
-            "Cuido cada detalle como si el resultado fuera a llevar mi nombre — porque lo lleva."
+            "En el código, como en todo buen viaje, no hay atajos que valgan la pena."
           </p>
 
           <div className="flex flex-wrap gap-3.5 items-center">
